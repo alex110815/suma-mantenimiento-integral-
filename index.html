@@ -409,6 +409,36 @@ footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
   background: none !important;
 }
 .hero-grid { display: none !important; }
+
+/* Cierre ordenado: sin figura naranja y con textos correctamente alineados */
+.final-cta::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+.final-cta > div {
+  display: flex;
+  flex: 1 1 auto;
+  max-width: 780px;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.final-cta .kicker { justify-content: flex-start; }
+.final-cta h2 {
+  width: 100%;
+  margin: 12px 0 0;
+  color: #fff !important;
+  text-align: left;
+}
+.final-cta p {
+  width: 100%;
+  margin: 17px 0 0;
+  text-align: left;
+}
+.final-cta .button { align-self: center; }
 </style>
 </head>
 <body>
