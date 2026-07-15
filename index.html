@@ -439,6 +439,47 @@ footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
   text-align: left;
 }
 .final-cta .button { align-self: center; }
+
+/* Pie de página compacto y agrupado */
+footer {
+  grid-template-columns: 1.35fr .75fr .55fr 1fr;
+  align-items: start;
+  gap: 28px;
+  padding-top: 34px;
+  padding-bottom: 16px;
+  border-top: 6px solid var(--orange);
+}
+.footer-main { max-width: 330px; }
+.footer-brand { width: 250px; height: 66px; }
+.footer-brand img { width: 250px; }
+.footer-main p { max-width: 300px; margin: 11px 0 0; }
+.footer-contact, .footer-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 5px; }
+.footer-contact > strong, .footer-links > strong, .footer-location strong { display: block; margin-bottom: 3px; color: var(--orange-2); font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
+.footer-contact a { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 7px 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 4px 11px 4px 11px; color: white; font-size: 12px; font-weight: 800; }
+.footer-contact a:hover { border-color: var(--orange); background: rgba(255,121,0,.1); }
+.footer-contact svg { width: 17px; height: 17px; color: var(--orange); }
+.footer-contact a:last-child svg { fill: #5aa0ff; stroke: none; color: #5aa0ff; }
+.footer-links { gap: 7px; font-size: 12px; }
+.footer-location { gap: 10px; padding-top: 5px; }
+.footer-location span { line-height: 1.5; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 14px; }
+
+@media (max-width: 900px) {
+  footer { grid-template-columns: 1.2fr .8fr .7fr; }
+  .footer-location { grid-column: 1 / -1; padding-top: 4px; border-top: 1px solid rgba(255,255,255,.1); }
+}
+
+@media (max-width: 760px) {
+  footer { grid-template-columns: 1fr 1fr; gap: 22px 18px; padding-top: 30px; }
+  .footer-main { grid-column: 1 / -1; }
+  .footer-location { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 5px; }
+}
+
+@media (max-width: 460px) {
+  footer { grid-template-columns: 1fr; }
+  .footer-main, .footer-location { grid-column: auto; }
+}
 </style>
 </head>
 <body>
@@ -593,10 +634,18 @@ footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
     </section>
 
     <footer>
-      <div class="footer-main"><a class="footer-brand" href="#inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a><p>Soluciones confiables para el mantenimiento de tus espacios.</p><a class="footer-phone" data-wa-message="Hola, quiero contactar a SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg>Contáctanos</a></div>
-      <div class="footer-links"><a href="#servicios">Servicios</a><a href="#cotizador">Cotizar</a><a href="#cobertura">Cobertura</a><a href="https://www.facebook.com/share/18vqam2eUs/" target="_blank" rel="noreferrer"><svg class="icon icon-sm"><use href="#i-facebook"/></svg> Facebook</a></div>
-      <div class="footer-location"><svg class="icon"><use href="#i-map"/></svg><span>Celaya, Guanajuato<br>y municipios cercanos</span></div>
-      <div class="footer-bottom">© <span id="year">2026</span> SUMA Mantenimiento Integral. Todos los derechos reservados.</div>
+      <div class="footer-main">
+        <a class="footer-brand" href="#inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a>
+        <p>Soluciones confiables para conservar y mejorar tus instalaciones.</p>
+      </div>
+      <div class="footer-contact">
+        <strong>Hablemos</strong>
+        <a data-wa-message="Hola, quiero contactar a SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg>Escríbenos</a>
+        <a href="https://www.facebook.com/share/18vqam2eUs/" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-facebook"/></svg>Facebook</a>
+      </div>
+      <div class="footer-links"><strong>Explora</strong><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#cotizador">Cotizar</a><a href="#cobertura">Cobertura</a></div>
+      <div class="footer-location"><svg class="icon"><use href="#i-map"/></svg><span><strong>Cobertura local</strong>Celaya, Guanajuato<br>y municipios cercanos</span></div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> SUMA Mantenimiento Integral.</span><span>Calidad · Cumplimiento · Confianza</span></div>
     </footer>
 
     <a class="floating-whatsapp" data-wa-message="Hola, quiero solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer" aria-label="Cotizar por WhatsApp"><svg class="icon"><use href="#i-whatsapp"/></svg><span>¿Cotizamos?</span></a>
