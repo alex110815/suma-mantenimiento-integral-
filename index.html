@@ -390,6 +390,11 @@ footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
   .brand { flex-basis: 220px; width: 220px; }
   .brand img { width: 220px; }
 }
+
+/* Portada limpia solicitada: sin figuras decorativas de fondo */
+.hero { background: #fff; }
+.hero::before, .hero::after { display: none; }
+.hero-grid { display: none; }
 </style>
 </head>
 <body>
