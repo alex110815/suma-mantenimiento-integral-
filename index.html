@@ -258,6 +258,138 @@ footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; pad
   .hero-media video { display: none; }
   .hero-media { background-image: url('assets/projects/impermeabilizacion-aplicacion.jpg'); }
 }
+
+/* Identidad corporativa SUMA: azul marino, naranja y geometría diagonal */
+:root {
+  --navy: #082548;
+  --navy-2: #12365f;
+  --ink: #0b2547;
+  --muted: #566579;
+  --orange: #ff7900;
+  --orange-2: #ff9b23;
+  --cream: #f7f8fa;
+  --line: #dbe1e8;
+  --shadow: 0 22px 50px rgba(8, 37, 72, .15);
+}
+
+body { background: #f7f8fa; }
+.topbar { height: 98px; padding-top: 8px; padding-bottom: 8px; border-bottom: 3px solid var(--orange); background: rgba(255,255,255,.97); }
+.brand { flex-basis: 330px; width: 330px; height: 78px; }
+.brand img { left: 0; width: 330px; }
+.nav { gap: clamp(14px, 1.8vw, 28px); }
+.nav > a:not(.nav-cta) { color: var(--navy); }
+.nav-facebook { display: inline-flex; align-items: center; gap: 6px; color: #1877f2 !important; }
+.nav-facebook svg { fill: currentColor; stroke: none; }
+.nav-cta { background: var(--orange); border-radius: 4px 18px 4px 18px; box-shadow: 0 9px 22px rgba(255,121,0,.22); }
+.nav-cta:hover { background: #e96f00; }
+
+.hero { grid-template-columns: minmax(0, 1.04fr) minmax(410px, .96fr); min-height: 650px; padding-top: 105px; background: linear-gradient(125deg, #fff 0 51%, #eef1f5 51% 100%); }
+.hero::before { content: ''; position: absolute; top: -120px; right: 34%; width: 210px; height: 760px; z-index: 0; background: var(--orange); transform: rotate(-13deg); opacity: .98; }
+.hero::after { content: ''; position: absolute; right: -95px; bottom: -115px; width: 270px; height: 270px; border-radius: 42px; background: var(--navy); transform: rotate(45deg); }
+.hero-grid { background-image: radial-gradient(circle, rgba(8,37,72,.15) 1.5px, transparent 1.7px); background-size: 21px 21px; mask-image: linear-gradient(135deg, black, transparent 46%); opacity: .55; }
+.eyebrow { color: var(--navy); }
+.eyebrow span { height: 4px; background: var(--orange); }
+h1 { max-width: 720px; color: var(--navy); font-size: clamp(48px, 5.35vw, 82px); text-transform: none; }
+.hero-copy { color: #495b70; }
+.button { border-radius: 5px 16px 5px 16px; }
+.button-primary { background: var(--orange); box-shadow: 0 14px 28px rgba(255,121,0,.25); }
+.button-primary:hover { background: #e96f00; }
+.button-ghost { border: 2px solid var(--navy); color: var(--navy); background: white; }
+.hero-trust svg { color: var(--orange); }
+.hero-media { min-height: 470px; border: 7px solid white; border-radius: 8px 48px 8px 48px; clip-path: polygon(8% 0,100% 0,100% 92%,92% 100%,0 100%,0 8%); box-shadow: 0 30px 65px rgba(8,37,72,.28); }
+.media-overlay { background: linear-gradient(180deg, rgba(8,37,72,.03) 28%, rgba(8,37,72,.88) 100%); }
+.media-label span { color: var(--orange-2); }
+.media-badge { border-radius: 4px 16px 4px 16px; background: rgba(8,37,72,.87); }
+
+.value-strip { max-width: 1180px; margin-top: -34px; border: 4px solid white; border-radius: 4px 24px 4px 24px; color: white; background: var(--navy); box-shadow: var(--shadow); }
+.value-strip > div { color: #d5dfeb; border-right-color: rgba(255,255,255,.18); }
+.value-strip strong { color: white; }
+.value-strip svg { color: var(--orange); }
+
+.section-heading h2, .coverage-content h2, .quote-intro h2, .final-cta h2 { color: var(--navy); }
+.kicker { color: var(--orange); }
+.services-section { position: relative; background: white; }
+.services-section::before { content: ''; position: absolute; top: 0; right: 0; width: 150px; height: 150px; background: var(--orange); clip-path: polygon(100% 0,100% 100%,0 0); }
+.services-grid { gap: 20px; }
+.service-card { border: 0; border-top: 5px solid var(--orange); border-radius: 5px 24px 5px 24px; background: #f8f9fb; box-shadow: 0 10px 26px rgba(8,37,72,.08); }
+.service-card:hover { border-color: var(--orange); box-shadow: 0 20px 40px rgba(8,37,72,.14); }
+.service-icon { width: 59px; height: 59px; border: 2px solid var(--orange); border-radius: 4px 16px 4px 16px; color: var(--orange); background: white; }
+.service-card h3 { color: var(--navy); }
+
+.projects-section { position: relative; background: linear-gradient(135deg, #eef1f4, #fff); }
+.projects-section::after { content: ''; position: absolute; left: 0; bottom: 0; width: 150px; height: 150px; background: var(--navy); clip-path: polygon(0 0,100% 100%,0 100%); }
+.project-photo { border: 5px solid white; border-radius: 4px 24px 4px 24px; }
+.project-photo::after { background: linear-gradient(180deg, transparent 42%, rgba(8,37,72,.92) 100%); }
+.projects-cta { position: relative; z-index: 2; border-left: 6px solid var(--orange); border-radius: 3px 18px 3px 18px; background: var(--navy); }
+
+.quote-section { position: relative; overflow: hidden; background: linear-gradient(118deg, var(--navy), #0d3158); }
+.quote-section::after { content: ''; position: absolute; right: -105px; top: -105px; width: 240px; height: 240px; border: 18px solid var(--orange); border-radius: 38px; transform: rotate(45deg); }
+.quote-intro, .quote-card { position: relative; z-index: 1; }
+.quote-card { border-top: 7px solid var(--orange); border-radius: 5px 24px 5px 24px; }
+.quote-step span { background: var(--orange); }
+.service-picker button { border-radius: 3px 10px 3px 10px; }
+.button-submit { background: var(--orange); }
+.button-submit:hover { background: #e96f00; }
+.quote-note svg, .form-reassurance svg { color: var(--orange); }
+
+.process-section { background: white; }
+.process-icon { border: 2px solid var(--orange); border-radius: 4px 18px 4px 18px; }
+.process-grid article { border-bottom: 4px solid var(--orange); background: #f7f8fa; clip-path: polygon(6% 0,100% 0,100% 88%,94% 100%,0 100%,0 12%); }
+.coverage-section { background: #f1f3f6; }
+.coverage-map { border: 8px solid white; border-radius: 7px 44px 7px 44px; background: linear-gradient(135deg, #fff, #dfe6ee); box-shadow: var(--shadow); }
+.coverage-map::before { border-radius: 4px 34px 4px 34px; }
+.coverage-tags span { border-left: 3px solid var(--orange); border-radius: 3px 9px 3px 9px; background: white; }
+
+.social-banner { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 42px clamp(22px, 8vw, 140px); overflow: hidden; color: white; background: #1877f2; }
+.social-banner::before { content: ''; position: absolute; top: -90px; right: 22%; width: 120px; height: 260px; background: rgba(255,255,255,.13); transform: rotate(-28deg); }
+.social-mark { position: relative; display: grid; width: 72px; height: 72px; place-items: center; border: 3px solid white; border-radius: 5px 22px 5px 22px; background: var(--navy); }
+.social-mark svg { width: 38px; height: 38px; fill: white; stroke: none; }
+.social-banner span { display: block; margin-bottom: 6px; color: #dceaff; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.social-banner h2 { max-width: 720px; margin: 0; color: white; font-size: clamp(25px, 2.5vw, 38px); line-height: 1.08; }
+.social-banner > a { position: relative; display: inline-flex; align-items: center; gap: 9px; padding: 16px 20px; border-radius: 4px 16px 4px 16px; color: var(--navy); background: white; font-weight: 800; }
+
+.final-cta { position: relative; overflow: hidden; border-top: 7px solid var(--orange); background: var(--navy); }
+.final-cta::after { content: ''; position: absolute; right: -80px; bottom: -120px; width: 250px; height: 250px; border-radius: 35px; background: var(--orange); transform: rotate(45deg); }
+.final-cta > * { position: relative; z-index: 1; }
+.button-light { border-radius: 4px 18px 4px 18px; }
+
+footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
+.footer-brand { width: 280px; height: 72px; border-radius: 4px 18px 4px 18px; }
+.footer-brand img { width: 280px; }
+.footer-links a { display: inline-flex; align-items: center; gap: 6px; }
+.footer-links svg { fill: currentColor; stroke: none; }
+
+@media (max-width: 1100px) {
+  .brand { flex-basis: 280px; width: 280px; }
+  .brand img { width: 280px; }
+  .nav { gap: 14px; font-size: 13px; }
+  .nav-facebook { font-size: 0; }
+  .nav-facebook svg { width: 21px; height: 21px; }
+}
+
+@media (max-width: 760px) {
+  .topbar { height: 82px; border-bottom-width: 3px; }
+  .brand { flex-basis: 250px; width: 250px; height: 68px; }
+  .brand img { width: 250px; }
+  .nav { top: 79px; }
+  .nav-facebook { justify-content: center; padding: 12px 0; font-size: 14px; }
+  .hero { padding-top: 74px; background: linear-gradient(155deg, #fff 0 58%, #eef1f5 58% 100%); }
+  .hero::before { top: 270px; right: -105px; height: 450px; width: 150px; }
+  .hero::after { display: none; }
+  .hero-media { min-height: 390px; border-width: 5px; border-radius: 5px 28px 5px 28px; }
+  .value-strip { border-width: 3px; }
+  .social-banner { grid-template-columns: auto 1fr; gap: 18px; padding: 36px 22px; }
+  .social-banner > a { grid-column: 1 / -1; justify-content: center; }
+  .social-mark { width: 58px; height: 58px; }
+  .process-grid article { padding-top: 28px; padding-bottom: 28px; }
+  .footer-brand { width: 260px; height: 68px; }
+  .footer-brand img { width: 260px; }
+}
+
+@media (max-width: 400px) {
+  .brand { flex-basis: 220px; width: 220px; }
+  .brand img { width: 220px; }
+}
 </style>
 </head>
 <body>
@@ -275,6 +407,7 @@ footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; pad
     <symbol id="i-tools" viewBox="0 0 24 24"><path d="m14.5 6.5 3-3 3 3-3 3M17.5 6.5l-6.8 6.8M5.7 11.1l-2.2 2.2 7.2 7.2 2.2-2.2-7.2-7.2ZM13.2 13.2l5.1 5.1"/></symbol>
     <symbol id="i-wall" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 10h16M10 4v6M15 10v10M4 16h11"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.5 7.5L3.5 20.5 4.8 16A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.3 8.2c.2-.4.4-.4.7-.4h.6c.2 0 .4.1.5.4l.8 1.7c.1.2.1.4 0 .6l-.5.7c-.1.1-.1.3 0 .5.5.8 1.2 1.5 2 2 .2.1.3.1.5 0l.7-.5c.2-.1.4-.1.6 0l1.7.8c.3.1.4.3.4.5v.6c0 .3 0 .5-.4.7-.5.3-1.3.3-2.3-.1-1-.4-2.2-1.2-3.4-2.4s-2-2.4-2.4-3.4c-.4-1-.4-1.8-.1-2.3Z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v5h4v-5h3.5l.5-4h-4V9c0-.7.3-1 1-1Z"/></symbol>
   </svg>
 
   <main>
@@ -286,6 +419,7 @@ footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; pad
         <a href="#proyectos">Proyectos</a>
         <a href="#como-trabajamos">Cómo trabajamos</a>
         <a href="#cobertura">Cobertura</a>
+        <a class="nav-facebook" href="https://www.facebook.com/share/18vqam2eUs/" target="_blank" rel="noreferrer" aria-label="Visitar Facebook de SUMA"><svg class="icon icon-sm"><use href="#i-facebook"/></svg>Facebook</a>
         <a class="nav-cta" data-wa-message="Hola, me gustaría solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon icon-sm"><use href="#i-whatsapp"/></svg>Cotizar</a>
       </nav>
     </header>
@@ -398,6 +532,12 @@ footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; pad
       </div>
     </section>
 
+    <section class="social-banner" aria-label="Redes sociales de SUMA">
+      <div class="social-mark"><svg class="icon"><use href="#i-facebook"/></svg></div>
+      <div><span>Síguenos en Facebook</span><h2>Conoce nuestros servicios y trabajos más recientes.</h2></div>
+      <a href="https://www.facebook.com/share/18vqam2eUs/" target="_blank" rel="noreferrer">Visitar Facebook <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </section>
+
     <section class="final-cta">
       <div><span class="kicker kicker-light">SUMA Mantenimiento Integral</span><h2>Ese pendiente puede <em>quedar resuelto.</em></h2><p>Hablemos de tu espacio y empecemos a darle la atención que necesita.</p></div>
       <a class="button button-light" data-wa-message="Hola, quiero solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg>Cotizar ahora</a>
@@ -405,7 +545,7 @@ footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; pad
 
     <footer>
       <div class="footer-main"><a class="footer-brand" href="#inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a><p>Soluciones confiables para el mantenimiento de tus espacios.</p><a class="footer-phone" data-wa-message="Hola, quiero contactar a SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg>Contáctanos</a></div>
-      <div class="footer-links"><a href="#servicios">Servicios</a><a href="#cotizador">Cotizar</a><a href="#cobertura">Cobertura</a></div>
+      <div class="footer-links"><a href="#servicios">Servicios</a><a href="#cotizador">Cotizar</a><a href="#cobertura">Cobertura</a><a href="https://www.facebook.com/share/18vqam2eUs/" target="_blank" rel="noreferrer"><svg class="icon icon-sm"><use href="#i-facebook"/></svg> Facebook</a></div>
       <div class="footer-location"><svg class="icon"><use href="#i-map"/></svg><span>Celaya, Guanajuato<br>y municipios cercanos</span></div>
       <div class="footer-bottom">© <span id="year">2026</span> SUMA Mantenimiento Integral. Todos los derechos reservados.</div>
     </footer>
