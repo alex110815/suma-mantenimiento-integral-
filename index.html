@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SUMA | Mantenimiento Integral en Celaya</title>
+  <meta name="description" content="Mantenimiento, reparaciones y remodelaciones para hogares y negocios en Celaya y alrededores. Cotiza por WhatsApp.">
+  <style>:root {
+  --navy: #101b37;
+  --navy-2: #18294f;
+  --ink: #18233c;
+  --muted: #5c6880;
+  --orange: #fc8b1c;
+  --orange-2: #ffac43;
+  --cream: #fff9f1;
+  --line: #dfe5ee;
+  --white: #ffffff;
+  --shadow: 0 20px 55px rgba(19, 34, 68, .12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--white); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+.icon { display: inline-block; flex: 0 0 auto; width: 1.5em; height: 1.5em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.icon-sm { width: 1.15em; height: 1.15em; }
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.topbar { position: sticky; top: 0; z-index: 50; height: 82px; display: flex; align-items: center; justify-content: space-between; padding: 10px clamp(22px, 5.5vw, 90px); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(223,229,238,.8); }
+.brand { display: block; height: 52px; }
+.brand img { display: block; width: 219px; height: 52px; object-fit: contain; object-position: left center; }
+.nav { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 35px); font-size: 14px; font-weight: 700; }
+.nav > a:not(.nav-cta) { color: #47536a; transition: color .2s; }
+.nav > a:not(.nav-cta):hover { color: var(--orange); }
+.nav-cta { display: inline-flex; gap: 8px; align-items: center; color: white; padding: 12px 18px; background: #20b65a; border-radius: 7px; transition: transform .2s, background .2s; }
+.nav-cta:hover { transform: translateY(-2px); background: #159e49; }
+.menu-button { display: none; border: 0; background: transparent; color: var(--navy); }
+
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr); gap: 48px; min-height: 630px; padding: 106px clamp(22px, 8vw, 140px) 88px; overflow: hidden; background: radial-gradient(circle at 79% 45%, rgba(255, 142, 30, .22) 0, rgba(255,142,30,0) 28%), linear-gradient(112deg, #fffaf5 0%, #fff 46%, #f1f6fb 100%); }
+.hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(20, 42, 80, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 42, 80, .035) 1px, transparent 1px); background-size: 52px 52px; mask-image: linear-gradient(90deg, black, transparent 70%); }
+.hero-content, .hero-art { position: relative; z-index: 1; }
+.eyebrow, .kicker { display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: .11em; font-size: 11px; color: var(--orange); font-weight: 800; }
+.eyebrow span { width: 27px; height: 3px; display: block; background: var(--orange); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 690px; margin: 20px 0 21px; color: var(--navy); font-size: clamp(46px, 5.2vw, 79px); letter-spacing: -.065em; line-height: .97; }
+h1 em, h2 em { color: var(--orange); font-style: normal; }
+.hero-copy { max-width: 590px; margin-bottom: 31px; color: var(--muted); font-size: 19px; line-height: 1.58; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 54px; padding: 0 22px; border-radius: 8px; font-size: 15px; font-weight: 800; transition: transform .2s, box-shadow .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: white; background: var(--orange); box-shadow: 0 14px 28px rgba(252,139,28,.24); }
+.button-primary:hover { background: #e97910; }
+.button-ghost { color: var(--navy); border: 1px solid #cad4e3; background: rgba(255,255,255,.62); }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: #46536a; font-size: 13px; font-weight: 700; }
+.hero-trust span { display: flex; align-items: center; gap: 6px; }
+.hero-trust svg { color: #21a95b; }
+
+.hero-art { min-height: 410px; align-self: center; }
+.hero-art::before { content: ''; position: absolute; top: 0; right: 1%; bottom: 0; left: 11%; border-radius: 43% 55% 47% 40%; background: linear-gradient(135deg, #15284f, #203d6e); transform: rotate(-8deg); box-shadow: 0 32px 64px rgba(19, 40, 79, .25); }
+.art-orbit { position: absolute; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; z-index: 1; }
+.orbit-one { width: 320px; height: 320px; left: 14%; top: 11%; }
+.orbit-two { width: 200px; height: 200px; left: 32%; top: 25%; border-color: rgba(252,139,28,.75); }
+.hero-mark { position: absolute; left: 29%; top: 24%; z-index: 2; width: 155px; height: 155px; color: white; }
+.mark-plus { position: absolute; inset: 0; display: grid; place-items: center; font-size: 95px; font-weight: 200; line-height: 1; }
+.mark-line { position: absolute; display: block; width: 100px; height: 25px; border-radius: 8px; background: var(--orange); transform: rotate(45deg); }
+.mark-a { top: 16px; right: 8px; }
+.mark-b { width: 74px; bottom: 13px; left: 2px; background: #fff; }
+.art-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: 12px; border: 1px solid rgba(255,255,255,.58); background: rgba(255,255,255,.92); box-shadow: 0 16px 35px rgba(12,23,48,.18); backdrop-filter: blur(8px); }
+.art-card-main { right: 1%; bottom: 11%; width: 250px; padding: 16px; border-radius: 12px; }
+.art-card-main strong { display: block; color: var(--navy); font-size: 14px; }
+.art-card-main span { display: block; margin-top: 4px; color: #68758a; font-size: 11px; }
+.art-card-icon { display: grid; flex: 0 0 47px; width: 47px; height: 47px; place-items: center; border-radius: 10px; color: white; background: var(--orange); }
+.art-card-mini { padding: 10px 12px; border-radius: 9px; color: var(--navy); font-size: 11px; font-weight: 800; }
+.art-card-mini svg { color: var(--orange); }
+.art-card-mini span { white-space: nowrap; }
+.art-card-top { right: 6%; top: 10%; }
+.art-card-right { right: -5%; top: 44%; }
+.art-card-bottom { left: 3%; bottom: 8%; }
+
+.value-strip { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1140px; margin: -40px auto 0; position: relative; z-index: 4; border-radius: 11px; overflow: hidden; background: var(--white); box-shadow: 0 15px 36px rgba(25,39,75,.13); }
+.value-strip > div { display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 96px; padding: 18px; color: #617087; font-size: 13px; border-right: 1px solid var(--line); }
+.value-strip > div:last-child { border-right: 0; }
+.value-strip svg { color: var(--orange); }
+.value-strip strong { color: var(--navy); }
+
+.section { padding: 118px clamp(22px, 8vw, 140px); }
+.section-heading { margin-bottom: 45px; }
+.split-heading { display: grid; grid-template-columns: 1.2fr .8fr; align-items: end; gap: 60px; }
+.section-heading h2, .coverage-content h2, .quote-intro h2, .final-cta h2 { margin: 12px 0 0; color: var(--navy); font-size: clamp(35px, 3.7vw, 53px); line-height: 1.05; letter-spacing: -.055em; }
+.split-heading > p { margin: 0 0 5px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.services-section { padding-bottom: 107px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.service-card { position: relative; min-height: 290px; padding: 29px 27px 25px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: white; transition: border-color .25s, transform .25s, box-shadow .25s; }
+.service-card:hover { transform: translateY(-5px); border-color: #f8b163; box-shadow: 0 18px 36px rgba(19,34,68,.09); }
+.service-number { position: absolute; top: 19px; right: 23px; color: #d8dfe9; font-size: 12px; font-weight: 800; }
+.service-icon { display: grid; width: 53px; height: 53px; place-items: center; margin-bottom: 24px; border-radius: 12px; color: var(--orange); background: #fff1e2; }
+.service-card h3 { margin-bottom: 9px; color: var(--navy); font-size: 19px; letter-spacing: -.025em; }
+.service-card p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+.service-card button { display: inline-flex; align-items: center; gap: 8px; margin-top: 7px; padding: 0; border: 0; color: var(--orange); background: transparent; font-size: 13px; font-weight: 800; }
+.service-card button:hover { color: #db700e; }
+
+.quote-section { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(42px, 7vw, 105px); padding: 100px clamp(22px, 8vw, 140px); color: white; background: var(--navy); }
+.quote-intro { padding: 19px 0; }
+.kicker-light { color: var(--orange-2); }
+.quote-intro h2 { color: white; }
+.quote-intro h2 em, .final-cta h2 em { color: var(--orange-2); }
+.quote-intro p { max-width: 480px; margin: 25px 0 29px; color: #bdc8da; line-height: 1.65; }
+.quote-note { display: flex; align-items: center; gap: 10px; color: #e6ebf3; font-size: 13px; font-weight: 700; }
+.quote-note svg { color: #29c463; }
+.quote-card { padding: 31px; border-radius: 12px; background: white; color: var(--ink); box-shadow: 0 23px 50px rgba(0,0,0,.18); }
+.quote-step { display: flex; align-items: center; gap: 8px; margin-bottom: 13px; color: var(--navy); font-size: 13px; }
+.quote-step span { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; color: white; background: var(--orange); font-size: 11px; }
+.service-picker { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 27px; }
+.service-picker button { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 10px; border: 1px solid #dde4ed; border-radius: 6px; color: #516078; background: #fff; font-size: 12px; text-align: left; transition: all .18s; }
+.service-picker button:hover, .service-picker .picker-active { border-color: var(--orange); color: var(--navy); background: #fff7ef; box-shadow: inset 0 0 0 1px var(--orange); }
+.service-picker svg { flex: 0 0 auto; color: var(--orange); }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 23px; }
+.form-grid label { display: grid; gap: 7px; color: #47556b; font-size: 12px; font-weight: 800; }
+.form-grid small { color: #8591a3; font-weight: 500; }
+.form-grid select, .form-grid textarea { width: 100%; border: 1px solid #d9e0e9; border-radius: 6px; outline: none; color: var(--ink); background: white; font-size: 13px; transition: border .18s, box-shadow .18s; }
+.form-grid select { height: 44px; padding: 0 10px; }
+.form-grid textarea { padding: 10px; resize: vertical; }
+.form-grid select:focus, .form-grid textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(252,139,28,.14); }
+.wide-label { grid-column: 1 / -1; }
+.button-submit { width: 100%; border: 0; color: white; background: #20b65a; box-shadow: 0 10px 24px rgba(32,182,90,.22); }
+.button-submit:hover { background: #159e49; }
+.form-reassurance { display: flex; justify-content: center; align-items: center; gap: 5px; margin: 14px 0 0; color: #7a8799; font-size: 11px; }
+.form-reassurance svg { color: #20b65a; }
+
+.process-section { background: #fffaf5; }
+.center-heading { text-align: center; }
+.center-heading .kicker { justify-content: center; }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1000px; margin: 0 auto; gap: 20px; }
+.process-grid article { position: relative; padding: 21px 38px; text-align: center; }
+.process-grid article:not(:last-child)::after { content: ''; position: absolute; right: -36px; top: 50px; width: 72px; border-top: 1px dashed #d1d8e1; }
+.process-icon { display: grid; width: 58px; height: 58px; place-items: center; margin: 0 auto 16px; border: 1px solid #ffd8b0; border-radius: 15px; color: var(--orange); background: #fff; }
+.process-grid span { color: var(--orange); font-size: 11px; font-weight: 800; }
+.process-grid h3 { margin: 8px 0; color: var(--navy); font-size: 18px; }
+.process-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+.coverage-section { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(38px, 8vw, 130px); align-items: center; padding: 108px clamp(22px, 8vw, 140px); overflow: hidden; }
+.coverage-map { position: relative; min-height: 350px; border-radius: 45% 53% 42% 49%; background: linear-gradient(135deg, #f4f7fb, #e9eff7); }
+.coverage-map::before { content: ''; position: absolute; inset: 18px; border: 1px dashed #c6d1df; border-radius: inherit; }
+.map-ring { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(252,139,28,.4); border-radius: 50%; transform: translate(-50%, -50%); }
+.map-ring-one { width: 190px; height: 190px; }
+.map-ring-two { width: 290px; height: 290px; border-color: rgba(16,27,55,.1); }
+.map-pin { position: absolute; z-index: 2; display: grid; place-items: center; width: 17px; height: 17px; border: 3px solid white; border-radius: 50%; background: var(--orange); box-shadow: 0 4px 10px rgba(16,27,55,.18); }
+.map-pin span { position: absolute; top: 23px; padding: 4px 7px; border-radius: 4px; color: var(--navy); background: white; box-shadow: 0 4px 10px rgba(16,27,55,.1); font-size: 10px; font-weight: 800; white-space: nowrap; }
+.pin-main { left: 47%; top: 50%; width: 24px; height: 24px; background: var(--navy); }
+.pin-main span { color: white; background: var(--navy); }
+.pin-one { left: 29%; top: 31%; }.pin-two { left: 22%; top: 64%; }.pin-three { right: 23%; top: 29%; }
+.coverage-content > p { max-width: 600px; margin: 21px 0 23px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.coverage-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.coverage-tags span { display: inline-flex; align-items: center; gap: 5px; padding: 8px 10px; border-radius: 5px; color: #526079; background: #f3f6fa; font-size: 11px; font-weight: 700; }
+.coverage-tags svg { color: var(--orange); }
+.text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--orange); font-size: 14px; font-weight: 800; }
+.text-link:hover { color: #d8720d; }
+
+.final-cta { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 69px clamp(22px, 8vw, 140px); color: white; background: linear-gradient(112deg, #15294f, #0f1b36); }
+.final-cta h2 { color: white; }
+.final-cta p { margin: 17px 0 0; color: #bdc8da; }
+.button-light { flex: 0 0 auto; color: var(--navy); background: white; }
+.button-light:hover { box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+.button-light svg { color: #20b65a; }
+
+footer { display: grid; grid-template-columns: 1.35fr .55fr .8fr; gap: 35px; padding: 55px clamp(22px, 8vw, 140px) 20px; color: #cbd4e1; background: #0c152a; }
+.footer-main { max-width: 320px; }
+.footer-brand { display: block; width: 204px; height: 47px; overflow: hidden; border-radius: 4px; background: white; }
+.footer-brand img { display: block; width: 204px; height: 47px; object-fit: contain; }
+.footer-main p { margin: 15px 0; color: #9eaac0; font-size: 13px; line-height: 1.5; }
+.footer-phone { display: inline-flex; align-items: center; gap: 7px; color: white; font-size: 14px; font-weight: 800; }
+.footer-phone svg, .footer-location svg { color: var(--orange); }
+.footer-links { display: grid; align-content: start; gap: 11px; padding-top: 10px; color: #cbd4e1; font-size: 13px; font-weight: 700; }
+.footer-links a:hover { color: var(--orange); }
+.footer-location { display: flex; align-items: flex-start; gap: 9px; padding-top: 10px; color: #cbd4e1; font-size: 13px; line-height: 1.55; }
+.footer-bottom { grid-column: 1 / -1; padding-top: 23px; border-top: 1px solid rgba(255,255,255,.12); color: #718098; font-size: 11px; }
+
+.floating-whatsapp { position: fixed; right: 25px; bottom: 25px; z-index: 40; display: inline-flex; align-items: center; gap: 8px; padding: 12px 15px; border-radius: 999px; color: white; background: #20b65a; box-shadow: 0 12px 29px rgba(9,83,37,.28); font-size: 13px; font-weight: 800; transition: transform .2s, background .2s; }
+.floating-whatsapp:hover { transform: translateY(-3px); background: #159e49; }
+
+@media (max-width: 1000px) {
+  .hero { grid-template-columns: 1.1fr .9fr; padding-left: 5vw; padding-right: 5vw; }
+  .hero-art { transform: scale(.85); transform-origin: right center; }
+  .value-strip { max-width: 90%; }
+  .section, .quote-section, .coverage-section, .final-cta, footer { padding-left: 5vw; padding-right: 5vw; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .coverage-section { gap: 65px; }
+}
+
+@media (max-width: 760px) {
+  .topbar { height: 69px; padding: 8px 20px; }
+  .brand, .brand img { width: 185px; height: 43px; }
+  .menu-button { display: block; }
+  .nav { position: absolute; top: 68px; left: 0; right: 0; display: none; align-items: stretch; gap: 0; padding: 10px 20px 18px; border-bottom: 1px solid var(--line); background: white; box-shadow: 0 11px 20px rgba(0,0,0,.05); }
+  .nav-open { display: grid; }
+  .nav > a:not(.nav-cta) { padding: 13px 0; }
+  .nav-cta { justify-content: center; margin-top: 8px; }
+  .hero { display: block; min-height: auto; padding: 72px 22px 58px; }
+  .hero-art { min-height: 300px; max-width: 410px; margin: 38px auto -8px; transform: scale(.84); transform-origin: center bottom; }
+  h1 { max-width: 500px; font-size: clamp(46px, 13vw, 65px); }
+  .hero-copy { font-size: 17px; }
+  .hero-trust { gap: 9px; display: grid; }
+  .value-strip { grid-template-columns: 1fr; max-width: calc(100% - 44px); margin-top: -17px; }
+  .value-strip > div { justify-content: flex-start; min-height: 70px; padding: 13px 18px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .value-strip > div:last-child { border-bottom: 0; }
+  .section { padding: 74px 22px; }
+  .split-heading, .quote-section, .coverage-section { display: block; }
+  .split-heading { margin-bottom: 32px; }
+  .split-heading > p { margin-top: 18px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 0; }
+  .quote-section { padding: 61px 22px; }
+  .quote-intro { padding: 0; margin-bottom: 30px; }
+  .quote-card { padding: 22px 17px; }
+  .service-picker { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .wide-label { grid-column: auto; }
+  .process-section { padding-top: 71px; padding-bottom: 62px; }
+  .process-grid { grid-template-columns: 1fr; gap: 13px; }
+  .process-grid article { padding: 13px 30px; }
+  .process-grid article:not(:last-child)::after { display: none; }
+  .coverage-section { padding: 65px 22px 75px; }
+  .coverage-map { min-height: 275px; margin-bottom: 50px; }
+  .map-ring-one { width: 145px; height: 145px; }.map-ring-two { width: 220px; height: 220px; }
+  .coverage-content > p { font-size: 15px; }
+  .final-cta { display: block; padding: 54px 22px; }
+  .final-cta .button { width: 100%; margin-top: 26px; }
+  footer { grid-template-columns: 1fr; gap: 23px; padding: 43px 22px 20px; }
+  .footer-links, .footer-location { padding-top: 0; }
+  .floating-whatsapp { right: 15px; bottom: 15px; padding: 12px 14px; }
+}
+
+@media (max-width: 400px) {
+  .hero-actions { display: grid; }.button { width: 100%; }.floating-whatsapp span { display: none; }.floating-whatsapp { border-radius: 50%; width: 52px; height: 52px; justify-content: center; padding: 0; }
+}
+</style>
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="m14.5 4.5 5 5"/><path d="m3 21 5.2-1.4L19.5 8.3a2.5 2.5 0 0 0-3.5-3.5L4.7 16.1 3 21Z"/><path d="m13 7.8 3.2 3.2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19.5 6.5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s-5 5.2-5 9a5 5 0 0 0 10 0c0-3.8-5-9-5-9Z"/><path d="M9.8 14.6c.3 1.2 1.1 2 2.3 2.3"/></symbol>
+    <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 15v-2a8 8 0 0 1 16 0v2"/><path d="M3 15h18M12 5v6M8 21h8"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3.5 11 8.5-7 8.5 7"/><path d="M5.5 10v9.5h13V10M9.5 19.5v-5h5v5"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m9 19-6 2V6l6-2 6 2 6-2v15l-6 2-6-2Z"/><path d="M9 4v15M15 6v15"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7.2 3.7 4.9 5.1c-.8.5-1.1 1.5-.8 2.4 2.4 6.2 7.4 11.2 13.6 13.6.9.3 1.9 0 2.4-.8l1.4-2.3-4.2-2.3-1.6 1.7c-2.6-1.1-5-3.5-6.1-6.1l1.7-1.6-2.3-4.2Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.2 19 6v5.4c0 4.5-2.8 7.7-7 9.4-4.2-1.7-7-4.9-7-9.4V6l7-2.8Z"/><path d="m8.6 12 2.2 2.2 4.7-4.7"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="m14.5 6.5 3-3 3 3-3 3M17.5 6.5l-6.8 6.8M5.7 11.1l-2.2 2.2 7.2 7.2 2.2-2.2-7.2-7.2ZM13.2 13.2l5.1 5.1"/></symbol>
+    <symbol id="i-wall" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 10h16M10 4v6M15 10v10M4 16h11"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.5 7.5L3.5 20.5 4.8 16A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8.3 8.2c.2-.4.4-.4.7-.4h.6c.2 0 .4.1.5.4l.8 1.7c.1.2.1.4 0 .6l-.5.7c-.1.1-.1.3 0 .5.5.8 1.2 1.5 2 2 .2.1.3.1.5 0l.7-.5c.2-.1.4-.1.6 0l1.7.8c.3.1.4.3.4.5v.6c0 .3 0 .5-.4.7-.5.3-1.3.3-2.3-.1-1-.4-2.2-1.2-3.4-2.4s-2-2.4-2.4-3.4c-.4-1-.4-1.8-.1-2.3Z"/></symbol>
+  </svg>
+
+  <main>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="SUMA Mantenimiento Integral, inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a>
+      <button class="menu-button" type="button" aria-label="Abrir menú"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#cobertura">Cobertura</a>
+        <a class="nav-cta" data-wa-message="Hola, me gustaría solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon icon-sm"><use href="#i-whatsapp"/></svg>Cotizar</a>
+      </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span>Mantenimiento residencial y comercial</div>
+        <h1>Tu espacio en <em>buenas manos.</em></h1>
+        <p class="hero-copy">Reparaciones, mantenimiento y remodelaciones para hogares, negocios y empresas de Celaya y alrededores.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#cotizador">Solicita tu cotización <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="button button-ghost" data-phone><svg class="icon"><use href="#i-phone"/></svg>461 348 9917</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg class="icon icon-sm"><use href="#i-check"/></svg>Atención en Celaya y alrededores</span>
+          <span><svg class="icon icon-sm"><use href="#i-check"/></svg>Servicio preventivo y correctivo</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="SUMA resuelve tus necesidades de mantenimiento">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card art-card-main"><div class="art-card-icon"><svg class="icon"><use href="#i-home"/></svg></div><div><strong>Soluciones que SUMAN</strong><span>Para cada espacio y necesidad</span></div></div>
+        <div class="art-card art-card-mini art-card-top"><svg class="icon"><use href="#i-brush"/></svg><span>Pintura</span></div>
+        <div class="art-card art-card-mini art-card-right"><svg class="icon"><use href="#i-drop"/></svg><span>Impermeabilización</span></div>
+        <div class="art-card art-card-mini art-card-bottom"><svg class="icon"><use href="#i-tools"/></svg><span>Reparaciones</span></div>
+        <div class="hero-mark"><span class="mark-plus">+</span><span class="mark-line mark-a"></span><span class="mark-line mark-b"></span></div>
+      </div>
+    </section>
+
+    <section class="value-strip" aria-label="Ventajas de SUMA">
+      <div><svg class="icon"><use href="#i-shield"/></svg><span><strong>Confianza</strong> en cada trabajo</span></div>
+      <div><svg class="icon"><use href="#i-tools"/></svg><span><strong>Soluciones prácticas</strong> y profesionales</span></div>
+      <div><svg class="icon"><use href="#i-map"/></svg><span><strong>Atención local</strong> en tu zona</span></div>
+    </section>
+
+    <section id="servicios" class="section services-section">
+      <div class="section-heading split-heading">
+        <div><span class="kicker">Lo que hacemos</span><h2>Un solo equipo para <em>muchas soluciones.</em></h2></div>
+        <p>Cuéntanos qué necesita tu espacio. Te orientamos para encontrar una solución clara y funcional.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card"><div class="service-number">01</div><div class="service-icon"><svg class="icon"><use href="#i-brush"/></svg></div><h3>Pintura y acabados</h3><p>Renueva interiores, fachadas y espacios de trabajo con un resultado limpio.</p><button type="button" data-quick-service="Pintura y acabados">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+        <article class="service-card"><div class="service-number">02</div><div class="service-icon"><svg class="icon"><use href="#i-drop"/></svg></div><h3>Impermeabilización</h3><p>Protege tu techo antes de que las filtraciones se conviertan en un problema.</p><button type="button" data-quick-service="Impermeabilización">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+        <article class="service-card"><div class="service-number">03</div><div class="service-icon"><svg class="icon"><use href="#i-wall"/></svg></div><h3>Tablaroca</h3><p>Muros, plafones y divisiones para aprovechar mejor tu espacio.</p><button type="button" data-quick-service="Tablaroca">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+        <article class="service-card"><div class="service-number">04</div><div class="service-icon"><svg class="icon"><use href="#i-helmet"/></svg></div><h3>Obra civil menor</h3><p>Trabajos de albañilería, reparación y adecuaciones para que todo quede en orden.</p><button type="button" data-quick-service="Obra civil menor">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+        <article class="service-card"><div class="service-number">05</div><div class="service-icon"><svg class="icon"><use href="#i-tools"/></svg></div><h3>Reparaciones generales</h3><p>Plomería, electricidad, herrería y mantenimiento correctivo.</p><button type="button" data-quick-service="Reparaciones generales">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+        <article class="service-card"><div class="service-number">06</div><div class="service-icon"><svg class="icon"><use href="#i-home"/></svg></div><h3>Remodelaciones</h3><p>Transformamos tu casa, local u oficina con soluciones prácticas y bien ejecutadas.</p><button type="button" data-quick-service="Remodelaciones">Quiero cotizar <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></article>
+      </div>
+    </section>
+
+    <section id="cotizador" class="quote-section">
+      <div class="quote-intro">
+        <span class="kicker kicker-light">Cotiza fácil</span>
+        <h2>Describe lo que necesitas y <em>conversemos por WhatsApp.</em></h2>
+        <p>En menos de un minuto puedes enviar los datos esenciales para que preparemos la mejor forma de apoyarte.</p>
+        <div class="quote-note"><svg class="icon"><use href="#i-whatsapp"/></svg><span>Tu solicitud se abrirá directamente en WhatsApp.</span></div>
+      </div>
+      <div class="quote-card">
+        <input id="selected-service" type="hidden" value="">
+        <div class="quote-step"><span>1</span><strong>Selecciona el servicio</strong></div>
+        <div class="service-picker">
+          <button type="button" data-service="Pintura y acabados"><svg class="icon"><use href="#i-brush"/></svg>Pintura y acabados</button>
+          <button type="button" data-service="Impermeabilización"><svg class="icon"><use href="#i-drop"/></svg>Impermeabilización</button>
+          <button type="button" data-service="Tablaroca"><svg class="icon"><use href="#i-wall"/></svg>Tablaroca</button>
+          <button type="button" data-service="Obra civil menor"><svg class="icon"><use href="#i-helmet"/></svg>Obra civil menor</button>
+          <button type="button" data-service="Reparaciones generales"><svg class="icon"><use href="#i-tools"/></svg>Reparaciones generales</button>
+          <button type="button" data-service="Remodelaciones"><svg class="icon"><use href="#i-home"/></svg>Remodelaciones</button>
+        </div>
+        <div class="quote-step"><span>2</span><strong>Cuéntanos un poco más</strong></div>
+        <div class="form-grid">
+          <label><span>¿En qué espacio?</span><select id="property"><option value="">Selecciona una opción</option><option>Casa</option><option>Local comercial</option><option>Oficina o empresa</option><option>Otro</option></select></label>
+          <label><span>¿En qué zona?</span><select id="location"><option>Celaya</option><option>Apaseo el Grande</option><option>Apaseo el Alto</option><option>Cortazar</option><option>Comonfort</option><option>Juventino Rosas</option><option>Villagrán</option><option>Otro lugar cercano</option></select></label>
+          <label class="wide-label"><span>Describe brevemente lo que necesitas <small>(opcional)</small></span><textarea id="details" placeholder="Ej. Tengo una filtración en la azotea y necesito revisarla." rows="3"></textarea></label>
+        </div>
+        <button id="send-quote" class="button button-submit" type="button"><svg class="icon"><use href="#i-whatsapp"/></svg>Enviar solicitud por WhatsApp <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <p class="form-reassurance"><svg class="icon icon-sm"><use href="#i-check"/></svg>Sin formularios complicados. Tú eliges cuándo conversar.</p>
+      </div>
+    </section>
+
+    <section id="como-trabajamos" class="section process-section">
+      <div class="section-heading center-heading"><span class="kicker">Así de sencillo</span><h2>De la idea a la <em>solución.</em></h2></div>
+      <div class="process-grid">
+        <article><div class="process-icon"><svg class="icon"><use href="#i-phone"/></svg></div><span>01</span><h3>Escríbenos</h3><p>Cuéntanos qué necesitas y en qué zona te encuentras.</p></article>
+        <article><div class="process-icon"><svg class="icon"><use href="#i-tools"/></svg></div><span>02</span><h3>Revisamos contigo</h3><p>Definimos los datos necesarios para valorar el trabajo.</p></article>
+        <article><div class="process-icon"><svg class="icon"><use href="#i-check"/></svg></div><span>03</span><h3>Manos a la obra</h3><p>Coordinamos el servicio para que tu espacio vuelva a estar en orden.</p></article>
+      </div>
+    </section>
+
+    <section id="cobertura" class="coverage-section">
+      <div class="coverage-map" aria-hidden="true"><div class="map-ring map-ring-one"></div><div class="map-ring map-ring-two"></div><div class="map-pin pin-main"><span>Celaya</span></div><div class="map-pin pin-one"><span>Comonfort</span></div><div class="map-pin pin-two"><span>Cortazar</span></div><div class="map-pin pin-three"><span>Apaseo</span></div></div>
+      <div class="coverage-content">
+        <span class="kicker">Atención cercana</span><h2>Estamos donde tu espacio <em>nos necesita.</em></h2>
+        <p>Atendemos hogares, locales y empresas en Celaya. También damos servicio en municipios cercanos, según el tipo de trabajo y disponibilidad.</p>
+        <div class="coverage-tags"><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Celaya</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Apaseo el Grande</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Apaseo el Alto</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Cortazar</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Comonfort</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Juventino Rosas</span><span><svg class="icon icon-sm"><use href="#i-map"/></svg>Villagrán</span></div>
+        <a class="text-link" data-wa-message="Hola, quiero saber si SUMA tiene cobertura en mi zona." target="_blank" rel="noreferrer">Consulta cobertura en tu zona <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div><span class="kicker kicker-light">SUMA Mantenimiento Integral</span><h2>Ese pendiente puede <em>quedar resuelto.</em></h2><p>Hablemos de tu espacio y empecemos a darle la atención que necesita.</p></div>
+      <a class="button button-light" data-wa-message="Hola, quiero solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg>Cotizar ahora</a>
+    </section>
+
+    <footer>
+      <div class="footer-main"><a class="footer-brand" href="#inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a><p>Soluciones confiables para el mantenimiento de tus espacios.</p><a class="footer-phone" data-phone><svg class="icon"><use href="#i-phone"/></svg>461 348 9917</a></div>
+      <div class="footer-links"><a href="#servicios">Servicios</a><a href="#cotizador">Cotizar</a><a href="#cobertura">Cobertura</a></div>
+      <div class="footer-location"><svg class="icon"><use href="#i-map"/></svg><span>Celaya, Guanajuato<br>y municipios cercanos</span></div>
+      <div class="footer-bottom">© <span id="year">2026</span> SUMA Mantenimiento Integral. Todos los derechos reservados.</div>
+    </footer>
+
+    <a class="floating-whatsapp" data-wa-message="Hola, quiero solicitar una cotización con SUMA Mantenimiento Integral." target="_blank" rel="noreferrer" aria-label="Cotizar por WhatsApp"><svg class="icon"><use href="#i-whatsapp"/></svg><span>¿Cotizamos?</span></a>
+  </main>
+  <script>(() => {
+  const phone = '524613489917';
+  const menuButton = document.querySelector('.menu-button');
+  const nav = document.querySelector('.nav');
+  const serviceButtons = [...document.querySelectorAll('[data-service]')];
+  const serviceInput = document.querySelector('#selected-service');
+  const propertyInput = document.querySelector('#property');
+  const locationInput = document.querySelector('#location');
+  const detailsInput = document.querySelector('#details');
+  const quoteButton = document.querySelector('#send-quote');
+
+  const waLink = (message) => `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  document.querySelectorAll('[data-wa-message]').forEach((link) => {
+    link.href = waLink(link.dataset.waMessage);
+  });
+
+  document.querySelectorAll('[data-phone]').forEach((link) => {
+    link.href = `tel:+${phone}`;
+  });
+
+  menuButton?.addEventListener('click', () => {
+    nav?.classList.toggle('nav-open');
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => nav.classList.remove('nav-open'));
+  });
+
+  const selectService = (button) => {
+    serviceButtons.forEach((item) => item.classList.remove('picker-active'));
+    button.classList.add('picker-active');
+    serviceInput.value = button.dataset.service;
+  };
+
+  serviceButtons.forEach((button) => {
+    button.addEventListener('click', () => selectService(button));
+  });
+
+  document.querySelectorAll('[data-quick-service]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const target = serviceButtons.find((item) => item.dataset.service === button.dataset.quickService);
+      if (target) selectService(target);
+      document.querySelector('#cotizador')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  quoteButton?.addEventListener('click', () => {
+    const details = detailsInput.value.trim();
+    const message = [
+      'Hola, quiero solicitar una cotización con SUMA Mantenimiento Integral.',
+      '',
+      `Servicio: ${serviceInput.value || 'Por definir'}`,
+      `Tipo de espacio: ${propertyInput.value || 'Por definir'}`,
+      `Zona: ${locationInput.value || 'Por definir'}`,
+      details ? `Detalle: ${details}` : '',
+      '',
+      '¿Me pueden apoyar?',
+    ].filter((line, index, array) => line || (index > 0 && array[index - 1])).join('\n');
+    window.open(waLink(message), '_blank', 'noopener,noreferrer');
+  });
+
+  const year = document.querySelector('#year');
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
+
+</script>
+</body>
+</html>
