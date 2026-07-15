@@ -391,10 +391,24 @@ footer { border-top: 1px solid rgba(255,255,255,.12); background: #061a32; }
   .brand img { width: 220px; }
 }
 
-/* Portada limpia solicitada: sin figuras decorativas de fondo */
-.hero { background: #fff; }
-.hero::before, .hero::after { display: none; }
-.hero-grid { display: none; }
+/* Portada limpia: textura sutil, sin bloques decorativos azul/naranja */
+.hero {
+  background-color: #fff !important;
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(8,37,72,.035) 0, rgba(8,37,72,0) 35%),
+    radial-gradient(ellipse at 88% 74%, rgba(255,121,0,.035) 0, rgba(255,121,0,0) 34%),
+    repeating-linear-gradient(132deg, rgba(8,37,72,.018) 0, rgba(8,37,72,.018) 1px, transparent 1px, transparent 42px) !important;
+}
+.hero::before,
+.hero::after,
+.services-section::before {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+.hero-grid { display: none !important; }
 </style>
 </head>
 <body>
