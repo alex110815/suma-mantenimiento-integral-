@@ -480,6 +480,33 @@ footer {
   footer { grid-template-columns: 1fr; }
   .footer-main, .footer-location { grid-column: auto; }
 }
+
+/* Mensaje de servicio en lugar del logotipo repetido */
+footer { grid-template-columns: 1.65fr .65fr .5fr .85fr; }
+.footer-service-title { display: inline-flex; align-items: baseline; gap: 9px; color: white; line-height: 1; }
+.footer-service-title strong, .footer-service-title span { font-size: 27px; letter-spacing: -.045em; }
+.footer-service-title span { color: var(--orange); font-weight: 800; }
+.footer-main p { max-width: 430px; margin-top: 8px; }
+.footer-benefits { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin-top: 13px; }
+.footer-benefits span { display: inline-flex; align-items: center; gap: 5px; color: #d8e1ec; font-size: 10px; font-weight: 800; white-space: nowrap; }
+.footer-benefits svg { width: 16px; height: 16px; color: var(--orange); }
+
+@media (max-width: 1050px) {
+  footer { grid-template-columns: 1.35fr .7fr .55fr; }
+  .footer-location { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  footer { grid-template-columns: 1fr 1fr; }
+  .footer-main { grid-column: 1 / -1; }
+}
+
+@media (max-width: 460px) {
+  footer { grid-template-columns: 1fr; }
+  .footer-main, .footer-location { grid-column: auto; }
+  .footer-service-title { gap: 7px; }
+  .footer-service-title strong, .footer-service-title span { font-size: 24px; }
+}
 </style>
 </head>
 <body>
@@ -635,8 +662,13 @@ footer {
 
     <footer>
       <div class="footer-main">
-        <a class="footer-brand" href="#inicio"><img src="assets/logo.jpg" alt="SUMA Mantenimiento Integral"></a>
-        <p>Soluciones confiables para conservar y mejorar tus instalaciones.</p>
+        <a class="footer-service-title" href="#inicio"><strong>Mantenimiento</strong><span>Integral</span></a>
+        <p>Soluciones confiables para el mantenimiento de tus instalaciones.</p>
+        <div class="footer-benefits">
+          <span><svg class="icon"><use href="#i-shield"/></svg>Preventivo</span>
+          <span><svg class="icon"><use href="#i-tools"/></svg>Correctivo</span>
+          <span><svg class="icon"><use href="#i-check"/></svg>Servicios confiables</span>
+        </div>
       </div>
       <div class="footer-contact">
         <strong>Hablemos</strong>
