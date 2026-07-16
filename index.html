@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MRXB3P1SP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MRXB3P1SP');
+  </script>
   <title>SUMA | Mantenimiento Integral en Celaya</title>
   <meta name="description" content="Mantenimiento, reparaciones y remodelaciones para hogares y negocios en Celaya y alrededores. Cotiza por WhatsApp.">
   <style>:root {
@@ -697,6 +705,14 @@ footer { grid-template-columns: 1.65fr .65fr .5fr .85fr; }
 
   document.querySelectorAll('[data-wa-message]').forEach((link) => {
     link.href = waLink(link.dataset.waMessage);
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'whatsapp_click', {
+          link_text: link.textContent.trim(),
+          page_location: window.location.href,
+        });
+      }
+    });
   });
 
   document.querySelectorAll('[data-phone]').forEach((link) => {
@@ -741,6 +757,13 @@ footer { grid-template-columns: 1.65fr .65fr .5fr .85fr; }
       '',
       '¿Me pueden apoyar?',
     ].filter((line, index, array) => line || (index > 0 && array[index - 1])).join('\n');
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        method: 'WhatsApp',
+        service: serviceInput.value || 'Por definir',
+        location: locationInput.value || 'Por definir',
+      });
+    }
     window.open(waLink(message), '_blank', 'noopener,noreferrer');
   });
 
